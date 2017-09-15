@@ -6,6 +6,9 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
+
+.env
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -16,6 +19,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.idea/
 
 /node_modules
 /yarn-error.log

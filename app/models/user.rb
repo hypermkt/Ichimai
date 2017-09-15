@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :authentications, :dependent => :destroy # Userが削除されたらそれに紐付くAuthenticationも削除する
+  accepts_nested_attributes_for :authentications
+
   authenticates_with_sorcery!
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
