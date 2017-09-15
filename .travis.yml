@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+ - 2.4.1
+services:
+  - mysql
+bundler_args: "--without production --deployment --path vendor/bundle"
+cache: bundler
+before_script:
+  - bin/rails db:migrate:reset
+script:
+  - bundle exec rspec
